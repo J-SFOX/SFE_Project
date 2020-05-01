@@ -1,0 +1,15 @@
+{
+  "python.pythonPath": "C:\\Users\\jemma\\Desktop\\SFOX\\My Work\\SelfLearning\\WEB\\React_django\\firstapp\\backend\\env\\Scripts\\python",
+  "team.showWelcomeMessage": false,
+  "editor.formatOnSave": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "[python]": {
+    "editor.formatOnSave": true
+  },
+  "python.venvPath": "${workspaceFolder}/backend/env/Scripts/python3",
+  "python.linting.pycodestyleArgs": ["--ignore=E501"]
+}
