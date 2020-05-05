@@ -6,7 +6,7 @@ class InvBloc extends React.Component {
   }
   render() {
     return (
-      <Jumbotron className="Bl-bg">
+      <Jumbotron className="">
         <h1>vous êtes de l'Ecole Superieure de Technologie</h1>
         <p>
           Entrer pour avoir 'acces aux cours ou donner de cours si vous etes

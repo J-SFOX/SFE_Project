@@ -52,7 +52,7 @@
 /* InvBloc.js */
 
 .Bl-bg {
-  background-color: #0779e4;
+  background-color: #0;
 }
 .Gr-btn {
   background-color: #b5e550;
@@ -81,4 +81,7 @@ strong{
 .p-b-5{
   padding-bottom:5px;
 
+}
+.h-500{
+  height:500px;
 }

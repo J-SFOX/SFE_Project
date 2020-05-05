@@ -4,7 +4,7 @@ import { Jumbotron, Row, Col } from "react-bootstrap";
 function Footer() {
   return (
     <footer className="mt-5">
-      <Jumbotron className="Gr-ftr-bg Ftr-marg-0 p-b-5">
+      <Jumbotron className="h-500 Gr-ftr-bg Ftr-marg-0 p-b-5">
         <Row className="justify-content-between p-3">
           <Col className="p-0" md={3} sm={12}>
             <strong>E</strong>cole <strong>S</strong>uperieur de{" "}
@@ -28,13 +28,3 @@ function Footer() {
 }
 export default Footer;
 
-// <Container fluid={true}>
-//         <Row className="border-top justify-content-between p-3">
-//           <Col className="p-0" md={3} sm={12}>
-//           <strong>E</strong>cole <strong>S</strong>uperieur de <strong>T</strong>echnologie
-//           </Col>
-//           <Col className="p-0 d-flex justify-content-end" md={3}>
-//             copyright &#169; 2020
-//           </Col>
-//         </Row>
-//       </Container>
