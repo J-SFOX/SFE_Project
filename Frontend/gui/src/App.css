@@ -1,8 +1,84 @@
+/* hompage.js style sheet  */
+
 .Gr {
   /* background-color: #000000; */
   color: #b5e550;
+  font-size: 25px;
 }
-.Bl{
-    color:#0779e4;
+.Bl {
+  color: #0779e4;
+  /* 0028ff blue force */
 }
-/* 0028ff blue force */
+
+.Chif_tit {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: serif;
+  color: #0779e4;
+}
+/* chiffres.js  */
+
+/* ChiffreCard.js Styling sheet  */
+
+.Big-number {
+  font-size: 40px;
+  font-family: basic;
+  font-weight: bold;
+  color: #b5e550;
+}
+
+.customText {
+  text-align: center;
+  /* border: 3px solid black; */
+  font-size: 20px;
+  font-family: texti;
+  /* color: #0779e4; */
+}
+
+@font-face {
+  font-family: texti;
+  src: url("./Assets/Fonts/OptimusPrinceps.ttf");
+}
+
+/* CardShape.js  */
+.Bl-tit {
+  color: #0779e4;
+}
+.Bl-btn {
+  background-color: #000;
+}
+
+/* InvBloc.js */
+
+.Bl-bg {
+  background-color: #0779e4;
+}
+.Gr-btn {
+  background-color: #b5e550;
+  color: #000;
+}
+
+.Gr-btn:hover {
+  background-color: #000;
+}
+
+/* Footer.js */
+
+.Gr-ftr-bg {
+  background-color: #b5e550;
+}
+
+.Ftr-marg-0{
+  margin-bottom: 0px;
+  color:black;
+}
+
+strong{
+  color:#0779e4;
+}
+
+.p-b-5{
+  padding-bottom:5px;
+
+}

@@ -1,22 +1,40 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Jumbotron, Row, Col } from "react-bootstrap";
 
 function Footer() {
   return (
     <footer className="mt-5">
-      <Container fluid={true}>
-        <Row className="border-top justify-content-between p-3">
+      <Jumbotron className="Gr-ftr-bg Ftr-marg-0 p-b-5">
+        <Row className="justify-content-between p-3">
           <Col className="p-0" md={3} sm={12}>
-          <strong>E</strong>cole <strong>S</strong>uperieur de <strong>T</strong>echnologie
-          </Col>
-          <Col className="p-0 d-flex justify-content-end" md={3}>
-            copyright &#169; 2020
+            <strong>E</strong>cole <strong>S</strong>uperieur de{" "}
+            <strong>T</strong>echnologie
           </Col>
         </Row>
-      </Container>
+        <Row >
+          {/* <Col></Col> */}
+        </Row>
+        <Row className="justify-content-between  ">
+          <Col md={4} sm={12} className="p-0 w-auto">
+              Designed & and developed by Jemmal soufiane
+          </Col>
+          <Col className="justify-content-end" md={0}>
+          copyright &#169; 2020
+          </Col>
+        </Row>
+      </Jumbotron>
     </footer>
   );
 }
 export default Footer;
+
+// <Container fluid={true}>
+//         <Row className="border-top justify-content-between p-3">
+//           <Col className="p-0" md={3} sm={12}>
+//           <strong>E</strong>cole <strong>S</strong>uperieur de <strong>T</strong>echnologie
+//           </Col>
+//           <Col className="p-0 d-flex justify-content-end" md={3}>
+//             copyright &#169; 2020
+//           </Col>
+//         </Row>
+//       </Container>
