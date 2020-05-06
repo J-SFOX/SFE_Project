@@ -1,4 +1,5 @@
 import React from "react";
+import AdminLog from '../Components/adminLog';
 
 class AdminPage  extends React.Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class AdminPage  extends React.Component {
   }
   render(){
       return(
-          <div>
-              Admin panel
+          <div >
+              <AdminLog/>
           </div>
       );
   }

@@ -11,6 +11,7 @@ import EcolePage from "./Pages/EcolePage";
 import FillPage from "./Pages/FillPage";
 import ParaPage from "./Pages/ParaPage";
 import AdminPage from "./Pages/AdminPage";
+import DashboardPage from "./Pages/Dashboard";
 
 // import Container from "react-bootstrap/Container";
 
@@ -62,6 +63,7 @@ class App extends React.Component {
             <Route path="/Information/Filieres" exact render={() => <FillPage />} />
             <Route path="/Information/para-universitaire" exact render={() => <ParaPage />} />
             <Route path="/contact" exact render={() => <ContactPage />} />
+            <Route path="/admin/dashboard" exact render={()=><DashboardPage/>}/>
           </Switch>
           <Footer />
         </Container>
