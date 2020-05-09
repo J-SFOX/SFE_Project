@@ -1,10 +1,12 @@
 import React from 'react';
 
+import DashLayout from '../Components/DashbLayout';
+
 class DashboardPage extends React.Component{
     render(){
         return(
             <div>
-                <p> welcome admin</p>
+                <DashLayout/>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "antd/dist/antd.css"; 
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 

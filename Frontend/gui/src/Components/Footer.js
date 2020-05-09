@@ -16,7 +16,7 @@ function Footer() {
         </Row>
         <Row className="justify-content-between  ">
           <Col md={4} sm={12} className="p-0 w-auto">
-              Designed & and developed by Jemmal soufiane
+              Designed & developed by Jemmal soufiane
           </Col>
           <Col className="justify-content-end" md={0}>
           copyright &#169; 2020
