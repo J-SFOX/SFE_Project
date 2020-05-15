@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 import Professeur from "../Components/Prof";
-import CustomProfForm from "../Components/FormProf";
+import CustomProfForm from "../Parts/FormProf";
 
 class ProfPanel extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class ProfPanel extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:8000/api/")
+      .get("http://127.0.0.1:8000/api/professeurs/")
       .then((res) => {
         this.setState({
           professeurs: res.data,

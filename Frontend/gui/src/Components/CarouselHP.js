@@ -6,9 +6,7 @@ import Essaouira from "../Assets/Images/Essaouria.jpg";
 import GroupeE from "../Assets/Images/Groupe_etudiant.jpg";
 
 class CarouselHP extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+ 
   render() {
     return (
       

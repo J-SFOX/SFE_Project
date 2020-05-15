@@ -3,15 +3,17 @@ import axios from "axios";
 import { Form, Input, Button, Layout } from "antd";
 
 const { Content } = Layout;
-class CustomProfForm extends React.Component {
+
+class CustomEtudForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       nom: "",
       prenom: "",
       email: "",
-      password: "",
+      filiere: "",
       username: "",
+      password: "",
     };
   }
   handleNameChange = (event) => {
@@ -39,33 +41,44 @@ class CustomProfForm extends React.Component {
       password: event.target.value,
     });
   };
+  handleFillChange = (event) => {
+    this.setState({
+      filiere: event.target.value,
+    });
+  };
 
-  handleSubmit = (event, requestType, professeurID) => {
+  handleSubmit = (event, requestType, etudiantID) => {
+    event.preventDefault();
     switch (requestType) {
       case "post":
         return axios
-          .post("http://127.0.0.1:8000/api/", {
-            fname: this.state.prenom,
-            lname: this.state.nom,
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
+          .post("http://127.0.0.1:8000/api/etudiants/", {
+            E_fname: this.state.prenom,
+            E_lname: this.state.nom,
+            E_email: this.state.email,
+            E_username: this.state.username,
+            E_password: this.state.password,
+            E_filiere: this.state.filiere,
           })
-          .then((res) => console.log(res))
-          .catch((eroor) => console.error(eroor));
+          .then((res) => console.log(res.data))
+          .catch((er) => console.error(er));
       case "put":
         return axios
-          .put(`http://127.0.0.1:8000/api/${professeurID}/`, {
-            fname: this.state.prenom,
-            lname: this.state.nom,
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
+          .put(`http://127.0.0.1:8000/api/etudiants/${etudiantID}/`, {
+            E_fname: this.state.prenom,
+            E_lname: this.state.nom,
+            E_email: this.state.email,
+            E_username: this.state.username,
+            E_password: this.state.password,
+            E_filiere: this.state.filiere,
           })
           .then((res) => console.log(res))
-          .catch((err) => console.error(err));
+          .catch((Err) => console.error(Err));
+      default:
+        return console.log("nothing to do");
     }
   };
+
   render() {
     return (
       <Content>
@@ -74,7 +87,7 @@ class CustomProfForm extends React.Component {
             this.handleSubmit(
               event,
               this.props.requestType,
-              this.props.professeurID
+              this.props.etudiantID
             )
           }
         >
@@ -113,6 +126,13 @@ class CustomProfForm extends React.Component {
               placeholder="Entrer le Mot de passe"
             />
           </Form.Item>
+          <Form.Item label="Filiere">
+            <Input
+              name="fill"
+              onChange={this.handleFillChange}
+              placeholder="Entrer la filiere"
+            />
+          </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
               {this.props.btnText}
@@ -123,5 +143,4 @@ class CustomProfForm extends React.Component {
     );
   }
 }
-
-export default CustomProfForm;
+export default CustomEtudForm;

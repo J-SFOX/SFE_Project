@@ -1,9 +1,6 @@
 import React from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 class InvBloc extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Jumbotron className="">

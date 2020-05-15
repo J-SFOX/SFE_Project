@@ -2,10 +2,6 @@ import React from "react";
 import ChifCard from "../Parts/ChiffreCard";
 
 class Chiffre extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className=" mt-5 mb-5 d-flex flex-baseline flex-wrap justify-content-between">
@@ -25,7 +21,6 @@ class Chiffre extends React.Component {
         <ChifCard number={1} text={"Bibliotheques"} />
         <ChifCard number={2} text={"Associations"} />
         <ChifCard number={8} text={"Club Etudiants"} />
-
       </div>
     );
   }

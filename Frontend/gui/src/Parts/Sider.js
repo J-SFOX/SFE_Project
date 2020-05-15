@@ -3,7 +3,7 @@ import { Menu, Layout } from "antd";
 import { Link } from "react-router-dom";
 
 import {
-  UploadOutlined,
+  BookOutlined,
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
@@ -31,9 +31,9 @@ class SiderLayout extends React.Component {
             <Link to="/admin/dashboard/profPanel">Professeurs</Link>
           </Menu.Item>
           <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-            <Link to="/admin/dashboard/etudPanel">Etudiant</Link>
+            <Link to="/admin/dashboard/etudPanel">Etudiants</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<UploadOutlined />}>
+          <Menu.Item key="3" icon={<BookOutlined />}>
             <Link to="/admin/dashboard/courPanel">Cours</Link>
           </Menu.Item>
           {/* <Menu.Item  key="4" icon={<UserOutlined />}>

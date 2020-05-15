@@ -1,9 +1,14 @@
 from rest_framework.routers import DefaultRouter
 from .views import ProfesseurViewSet
+from .views import EtudiantViewSet
+from .views import CourViewSet
 
 # this router replaace all the commented code below
 router = DefaultRouter()
-router.register(r'', ProfesseurViewSet, basename='myApp')
+# ishould change it by using professeur between '' and in the basename
+router.register(r'professeurs', ProfesseurViewSet, basename='professeur')
+router.register(r'etudiants', EtudiantViewSet, basename='etudiant')
+router.register(r'cours', CourViewSet, basename='cour')
 urlpatterns = router.urls
 
 

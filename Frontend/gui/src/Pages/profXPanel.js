@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Card, Button } from "antd";
 
-import CustomProfForm from "../Components/FormProf";
+import CustomProfForm from "../Parts/FormProf";
 
 // const {Content} = Layout;
 class ProfXPanel extends React.Component {
@@ -18,7 +18,7 @@ class ProfXPanel extends React.Component {
         match: { params },
       } = this.props;
       axios
-        .get(`http://127.0.0.1:8000/api/${params.professeurID}/`)
+        .get(`http://127.0.0.1:8000/api/professeurs/${params.professeurID}/`)
         .then((res) => {
           this.setState({
             professeur: res.data,
@@ -29,13 +29,15 @@ class ProfXPanel extends React.Component {
     }
   }
 
-//delete method
+  //delete method
 
   handleDelete = () => {
     const {
       match: { params },
     } = this.props;
-    axios.delete(`http://127.0.0.1:8000/api/${params.professeurID}/`);
+    axios.delete(
+      `http://127.0.0.1:8000/api/professeurs/${params.professeurID}/`
+    );
   };
 
   render() {
