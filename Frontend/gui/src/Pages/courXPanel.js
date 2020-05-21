@@ -7,7 +7,7 @@ class CourXPanel extends React.Component {
     super(props);
     this.state = {
       cour: {},
-    };
+    }; 
   }
   componentDidMount() {
     try {

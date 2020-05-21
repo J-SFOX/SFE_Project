@@ -4,9 +4,11 @@ from myApp.models import Cour
 from .serializers import ProfesseurSerializers
 from .serializers import EtudiantSerializers
 from .serializers import CourSerializers
-from rest_framework import viewsets
+from rest_framework import (viewsets, generics)
 from django.http import HttpResponse
+from rest_framework.response import Response
 from django.core.files.storage import FileSystemStorage
+from rest_framework.decorators import action
 # this View Set replace all the commented views
 
 
@@ -49,21 +51,22 @@ class CourViewSet(viewsets.ModelViewSet):
             cour.put(Titre_C=Titre_C, Element_C=Element_C,
                      Filiere_C=Filiere_C, Module_C=Module_C, Semestre=Semestre, PDF_C=PDF_C, Video_C=Video_C)
             return({'message': 'cour updated'})
-        # def post(self, request, *args, **kwargs):
-        # from rest_framework.generics import (
-        #     ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView)
-        # class ArticleListView(ListAPIView):
-        #     queryset = Article.objects.all()  # return all the articles
-        #     serializer_class = ArticleSerializers
-        # class ArticleDetailView(RetrieveAPIView):
-        #     queryset = Article.objects.all()
-        #     serializer_class = ArticleSerializers
-        # class ArticleCreateView(CreateAPIView):
-        #     queryset = Article.objects.all()
-        #     serializer_class = ArticleSerializers
-        # class ArticleUpdateView(UpdateAPIView):
-        #     queryset = Article.objects.all()
-        #     serializer_class = ArticleSerializers
-        # class ArticleDeleteView(DestroyAPIView):
-        #     queryset = Article.objects.all()
-        #     serializer_class = ArticleSerializers
+
+            # def post(self, request, *args, **kwargs):
+            # from rest_framework.generics import (
+            #     ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView)
+            # class ArticleListView(ListAPIView):
+            #     queryset = Article.objects.all()  # return all the articles
+            #     serializer_class = ArticleSerializers
+            # class ArticleDetailView(RetrieveAPIView):
+            #     queryset = Article.objects.all()
+            #     serializer_class = ArticleSerializers
+            # class ArticleCreateView(CreateAPIView):
+            #     queryset = Article.objects.all()
+            #     serializer_class = ArticleSerializers
+            # class ArticleUpdateView(UpdateAPIView):
+            #     queryset = Article.objects.all()
+            #     serializer_class = ArticleSerializers
+            # class ArticleDeleteView(DestroyAPIView):
+            #     queryset = Article.objects.all()
+            #     serializer_class = ArticleSerializers

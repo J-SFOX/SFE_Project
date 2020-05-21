@@ -9,7 +9,7 @@ const { Content } = Layout;
 class CustomCourForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       titre: "",
       element: "",
       filiere: "",
@@ -70,7 +70,7 @@ class CustomCourForm extends React.Component {
 
       Data.append("Titre_C", this.state.titre);
       Data.append("Element_C", this.state.element);
-      Data.append("Filiere_C", this.state.filiere);
+      Data.append("Filiere_C", this.state.filiere.toLowerCase());
       Data.append("Module_C", this.state.module);
       Data.append("Semestre", this.state.semestre);
       Data.append(

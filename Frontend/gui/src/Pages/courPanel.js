@@ -10,7 +10,7 @@ class CourPanel extends React.Component {
       this.state={
         Cours : [],
       };
-    
+ 
   }
 
   // here i fetch data from the db to put it in the cours element

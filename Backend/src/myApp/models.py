@@ -37,16 +37,15 @@ def upload_PDF_path(instance, filename):
 
 
 class Cour(models.Model):
-    # ID_C =models.ID_C =models.AutoField(primary_key=True)
-    Titre_C = models.Title_C = models.CharField(max_length=300)
-    Element_C = models.Element_C = models.CharField(max_length=50)
-    Filiere_C = models.Filiere_C = models.CharField(max_length=100)
-    Module_C = models.Module_C = models.CharField(max_length=200)
-    Semestre = models.Semestre = models.IntegerField()
-    PDF_C = models.PDF_C = models.FileField(blank=True,
-                                            upload_to=upload_PDF_path, null=True)
-    Video_C = models.Video_C = models.FileField(blank=True,
-                                                upload_to=upload_video_path, null=True)
+    Titre_C = models.CharField(max_length=300)
+    Element_C = models.CharField(max_length=50)
+    Filiere_C = models.CharField(max_length=100)
+    Module_C = models.CharField(max_length=200)
+    Semestre = models.IntegerField()
+    PDF_C = models.FileField(blank=True,
+                             upload_to=upload_PDF_path, null=True)
+    Video_C = models.FileField(blank=True,
+                               upload_to=upload_video_path, null=True)
 
     def __str__(self):
         return self.Titre_C

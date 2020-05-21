@@ -58,7 +58,7 @@ class CustomEtudForm extends React.Component {
             E_email: this.state.email,
             E_username: this.state.username,
             E_password: this.state.password,
-            E_filiere: this.state.filiere,
+            E_filiere: this.state.filiere.toLowerCase(),
           })
           .then((res) => console.log(res.data))
           .catch((er) => console.error(er));

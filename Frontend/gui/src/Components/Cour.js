@@ -1,6 +1,6 @@
 import React from "react";
 import { List } from "antd";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { BookFilled } from "@ant-design/icons";
 function Cour(props) {
   return (
@@ -11,11 +11,8 @@ function Cour(props) {
         <List.Item>
           <List.Item.Meta
             avatar={<BookFilled />}
-            title={
-              <Link to={`/admin/dashboard/courPanel/${item.id}`}>
-                {item.Titre_C}
-              </Link>
-            }
+            title={item.Titre_C}
+            // description={item.description}
           />
         </List.Item>
       )}
