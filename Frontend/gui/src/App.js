@@ -20,6 +20,7 @@ import EtudXPanel from "./Pages/etudXPanel";
 import EtudPanel from "./Pages/etudPanel";
 import ProfDesk from "./Pages/profDesk";
 import EtudBook from "./Pages/etudBook";
+import ProfXcour from "./Pages/profXcour";
 import DashboardPage from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import Register from "./Pages/register";
@@ -127,6 +128,7 @@ class App extends React.Component {
               path="/admin/dashboard/courPanel/:courID"
               component={CourXPanel}
             />
+            <Route exact path="/amprof/:courID" component={ProfXcour} />
             <Route
               exact
               path="/admin/dashboard/courPanel/"

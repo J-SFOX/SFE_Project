@@ -1,9 +1,8 @@
 import React from "react";
 import { List, Avatar } from "antd";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-
-function Professeur(props){
+function Professeur(props) {
   return (
     <List
       itemLayout="horizontal"
@@ -14,7 +13,11 @@ function Professeur(props){
             avatar={
               <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
             }
-            title={<Link to={`/admin/dashboard/profPanel/${item.id}`}>{item.fname}</Link>}
+            title={
+              <Link to={`/admin/dashboard/profPanel/${item.id}`}>
+                {item.fname}
+              </Link>
+            }
             // description={item.id}
           />
         </List.Item>

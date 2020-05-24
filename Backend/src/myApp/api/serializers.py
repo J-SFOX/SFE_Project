@@ -20,4 +20,4 @@ class CourSerializers(serializers.ModelSerializer):
     class Meta:
         model = Cour
         fields = ('id', 'Titre_C', 'Element_C',
-                  'Filiere_C', 'Module_C', 'Semestre', 'PDF_C', 'Video_C')
+                  'Filiere_C', 'Module_C', 'Prof_C', 'Semestre', 'PDF_C', 'Video_C')

@@ -41,6 +41,7 @@ class Cour(models.Model):
     Element_C = models.CharField(max_length=50)
     Filiere_C = models.CharField(max_length=100)
     Module_C = models.CharField(max_length=200)
+    Prof_C = models.CharField(max_length=100)
     Semestre = models.IntegerField()
     PDF_C = models.FileField(blank=True,
                              upload_to=upload_PDF_path, null=True)

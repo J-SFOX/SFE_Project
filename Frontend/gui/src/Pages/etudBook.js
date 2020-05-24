@@ -26,15 +26,20 @@ class EtudBook extends React.Component {
   }
 
   componentDidMount() {
-    const id = JSON.parse(localStorage.getItem("etudID"));
+    // const id = JSON.parse(localStorage.getItem("etudID"));
     this.setState({});
     // console.log(filname);
-    axios.get("http://127.0.0.1:8000/api/cours/").then((res) => {
-      this.setState({
-        cours: res.data,
+    axios
+      .get("http://127.0.0.1:8000/api/cours/")
+      .then((res) => {
+        this.setState({
+          cours: res.data,
+        });
+        console.log("gettted");
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      console.log("gettted");
-    });
     // console.log(this.state.filCour);
     // this.getAllcour(filname);
   }
@@ -51,7 +56,7 @@ class EtudBook extends React.Component {
         console.log(i);
       }
     }
-    console.log(courfilX);
+    console.log(courfilX); 
     this.setState({
       filCour: courfilX,
     });

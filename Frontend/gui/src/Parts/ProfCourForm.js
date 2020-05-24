@@ -1,13 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { Form, Input, Button, Layout } from "antd";
-
-// import { UploadOutlined } from "@ant-design/icons";
-// import { message, Upload } from "antd";
+import { Form, Button } from "react-bootstrap";
+import { Layout } from "antd";
 
 const { Content } = Layout;
-
-class CustomCourForm extends React.Component {
+class ProfCourForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,11 +15,21 @@ class CustomCourForm extends React.Component {
       semestre: "",
       selectedFile: null, //pdf file to upload
       selectedVideo: null,
-      profID: "",
     };
-    //   video: null,
   }
+  //   onFinish = (values) => {
+  //     this.setState({
+  //       titre: values.titre,
+  //       element: values.element,
+  //       module: values.module,
+  //       filiere: values.filiere,
+  //       semestre: values.semestre,
+  //       selectedFile: values.pdf,
+  //       selectedVideo: values.video,
+  //     });
 
+  //     console.log(values.pdf);
+  //   };
   handleTitreChange = (event) => {
     this.setState({
       titre: event.target.value,
@@ -37,6 +44,7 @@ class CustomCourForm extends React.Component {
     this.setState({
       filiere: event.target.value,
     });
+    // console.log(this.state.filiere);
   };
   handleModuleChange = (event) => {
     this.setState({
@@ -48,23 +56,24 @@ class CustomCourForm extends React.Component {
       semestre: event.target.value,
     });
   };
-  handleProfIDChange = (event) => {
-    this.setState({
-      profID: event.target.value,
-    });
-  };
+
   handlePDFChange = (event) => {
     this.setState({
       selectedFile: event.target.files[0],
     });
+    // console.log(event.target.files[0]);
   };
   handleVideoChange = (event) => {
     this.setState({
       selectedVideo: event.target.files[0],
     });
+    // console.log(event.target.files[0]);
   };
 
-  //submit method
+  onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
   handleSubmit = (event, requestType, courID) => {
     try {
       event.preventDefault();
@@ -80,7 +89,7 @@ class CustomCourForm extends React.Component {
       Data.append("Filiere_C", this.state.filiere.toLowerCase());
       Data.append("Module_C", this.state.module);
       Data.append("Semestre", this.state.semestre);
-      Data.append("Prof_C", this.state.profID);
+      Data.append("Prof_C", this.props.profID);
       Data.append(
         "PDF_C",
         this.state.selectedFile,
@@ -114,81 +123,81 @@ class CustomCourForm extends React.Component {
       console.log(err);
     }
   };
-
   render() {
     return (
       <Content>
         <Form
-          onSubmitCapture={(event) =>
-            this.handleSubmit(event, this.props.requestType, this.props.courID)
-          }
+          onSubmit={(event) => {
+            this.handleSubmit(event, this.props.requestType, this.props.courID);
+          }}
         >
-          <Form.Item label="Titre cour">
-            <Input
-              name="titre"
+          <Form.Group>
+            <Form.Label>Titre du cours</Form.Label>
+            <Form.Control
               onChange={this.handleTitreChange}
-              placeholder="Entrer le titre"
+              type="text"
+              placeholder="Entrer le titre du cours"
             />
-          </Form.Item>
-          <Form.Item label="Element">
-            <Input
-              name="element"
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Element du cours</Form.Label>
+            <Form.Control
               onChange={this.handleElementChange}
-              placeholder="Entrer l'Element"
+              type="text"
+              placeholder="Entrer l'element du cours"
             />
-          </Form.Item>
-          <Form.Item label="Filiere">
-            <Input
-              name="filiere"
-              onChange={this.handleFiliereChange}
-              placeholder="Entrer l'Email"
-            />
-          </Form.Item>
-          <Form.Item label="Module">
-            <Input
-              name="module"
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Module du cours</Form.Label>
+            <Form.Control
               onChange={this.handleModuleChange}
-              placeholder="Entrer le Module"
+              type="text"
+              placeholder="Entrer le module du cours"
             />
-          </Form.Item>
-          <Form.Item label="Professeur">
-            <Input
-              name="professeur"
-              onChange={this.handleProfIDChange}
-              placeholder="Entrer l'identifiant du professeur"
-            />
-          </Form.Item>
-          <Form.Item label="Semestre">
-            <Input
-              name="semestre"
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Filiere du cours</Form.Label>
+            <Form.Control as="select" onChange={this.handleFiliereChange}>
+              <option>Choisir la filliere du cours</option>
+              <option value="genie informatique">Genie Informatique</option>
+              <option value="genie environement">Genie Environement</option>
+              <option value="technique de management">
+                Technique de management
+              </option>
+            </Form.Control>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Semestre du cours</Form.Label>
+            <Form.Control
               onChange={this.handleSemestreChange}
-              placeholder="Entrer le semestre"
+              type="text"
+              placeholder="Entrer le semestre du cours"
             />
-          </Form.Item>
-          <Form.Item>
-            <input
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Support du cours (pdf,word ...)</Form.Label>
+            <Form.Control
+              onChange={this.handlePDFChange}
               type="file"
-              name="pdf"
-              onChange={(e) => this.handlePDFChange(e)}
+              placeholder="Ajouter le Support du cours"
             />
-          </Form.Item>
-          <Form.Item>
-            <input
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Video du cours</Form.Label>
+            <Form.Control
+              onChange={this.handleVideoChange}
               type="file"
-              name="video"
-              onChange={(e) => this.handleVideoChange(e)}
+              placeholder="Ajouter le video representatif du cours"
             />
-          </Form.Item>
-          
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              {this.props.btnText}
-            </Button>
-          </Form.Item>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            {this.props.btnText}
+          </Button>
         </Form>
-        {/* {this.state.selectedFile} */}
       </Content>
     );
   }
 }
-export default CustomCourForm;
+
+export default ProfCourForm;

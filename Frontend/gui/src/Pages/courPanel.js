@@ -11,7 +11,7 @@ class CourPanel extends React.Component {
         Cours : [],
       };
  
-  }
+  } 
 
   // here i fetch data from the db to put it in the cours element
   componentDidMount(){

@@ -135,7 +135,7 @@ class Register extends React.Component {
               initialValues={{ remember: false }}
               onFinish={this.onFinish}
               onFinishFailed={this.onFinishFailed}
-            > 
+            >
               <Form.Item
                 label="Prenom"
                 name="name"
@@ -150,7 +150,6 @@ class Register extends React.Component {
               >
                 <Input />
               </Form.Item>
-
               <Form.Item
                 label="Username"
                 name="username"
@@ -160,7 +159,6 @@ class Register extends React.Component {
               >
                 <Input />
               </Form.Item>
-
               <Form.Item
                 label="Email"
                 name="email"
@@ -168,7 +166,6 @@ class Register extends React.Component {
               >
                 <Input />
               </Form.Item>
-
               <Form.Item
                 label="Mot de passe"
                 name="password"
@@ -178,7 +175,6 @@ class Register extends React.Component {
               >
                 <Input.Password />
               </Form.Item>
-
               <Form.Item name="Owner">
                 <Select
                   showSearch
@@ -197,7 +193,7 @@ class Register extends React.Component {
                   <Option value="Etud">Etudiant</Option>
                 </Select>
               </Form.Item>
-
+              {/* // change it to a select */}
               {this.state.owner === "Etud" ? (
                 <Form.Item
                   label="Filiere"
@@ -212,7 +208,6 @@ class Register extends React.Component {
                   <Input />
                 </Form.Item>
               ) : null}
-
               <Form.Item
                 {...tailLayout}
                 name="remember"
@@ -220,7 +215,6 @@ class Register extends React.Component {
               >
                 <Checkbox>Remember me</Checkbox>
               </Form.Item>
-
               <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
                   Submit

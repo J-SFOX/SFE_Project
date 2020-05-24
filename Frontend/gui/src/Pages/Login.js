@@ -98,72 +98,83 @@ class Login extends React.Component {
   };
 
   render() {
-    return (
-      <div className="form-container">
-        <div className="space-align-block border border-black p-5 w-auto">
-          <Space align="center">
-            <Form
-              name="normal_login"
-              className="login-form"
-              initialValues={{
-                remember: false,
-              }}
-              onFinish={this.onFinish}
-            >
-              <Form.Item
-                name="username"
-                rules={[
-                  {
-                    required: true,
-                    message: "Entrer le Nom d'utilisateur",
-                  },
-                ]}
+    if (
+      !localStorage.getItem("isAuthenticated") &&
+      !sessionStorage.getItem("haveAccess")
+    ) {
+      return (
+        <div className="form-container">
+          <div className="space-align-block border border-black p-5 w-auto">
+            <Space align="center">
+              <Form
+                name="normal_login"
+                className="login-form"
+                initialValues={{
+                  remember: false,
+                }}
+                onFinish={this.onFinish}
               >
-                <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Username"
-                />
-              </Form.Item>
-              <Form.Item
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Entrer votre mot de passe",
-                  },
-                ]}
-              >
-                <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
-                  type="password"
-                  placeholder="Password"
-                />
-              </Form.Item>
-              <Form.Item>
-                <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox>Remember me</Checkbox>
+                <Form.Item
+                  name="username"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Entrer le Nom d'utilisateur",
+                    },
+                  ]}
+                >
+                  <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="Username"
+                  />
                 </Form.Item>
+                <Form.Item
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Entrer votre mot de passe",
+                    },
+                  ]}
+                >
+                  <Input.Password
+                    prefix={<LockOutlined className="site-form-item-icon" />}
+                    type="password"
+                    placeholder="Password"
+                  />
+                </Form.Item>
+                <Form.Item>
+                  <Form.Item name="remember" valuePropName="checked" noStyle>
+                    <Checkbox>Remember me</Checkbox>
+                  </Form.Item>
 
-                {/* <a className="login-form-forgot" href="">
+                  {/* <a className="login-form-forgot" href="">
                   Forgot password
                 </a> */}
-              </Form.Item>
+                </Form.Item>
 
-              <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
-                  Log in
-                </Button>{" "}
-                Or <NavLink to="/register"> Register</NavLink>
-              </Form.Item>
-            </Form>
-          </Space>
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Log in
+                  </Button>{" "}
+                  Or <NavLink to="/register"> Register</NavLink>
+                </Form.Item>
+              </Form>
+            </Space>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      if (localStorage.getItem("profID")) {
+        window.location.href = "/amprof";
+      } else {
+        window.location.href = "/ametud";
+      }
+    }
   }
 }
 

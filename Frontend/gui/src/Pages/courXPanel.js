@@ -7,7 +7,7 @@ class CourXPanel extends React.Component {
     super(props);
     this.state = {
       cour: {},
-    }; 
+    };
   }
   componentDidMount() {
     try {
@@ -39,6 +39,7 @@ class CourXPanel extends React.Component {
           <p>{this.state.cour.Filiere_C}</p>
           <p>{this.state.cour.Module_C}</p>
           <p>{this.state.cour.Semestre}</p>
+          <p>{this.state.cour.ProfID}</p>
           <p>
             <strong>Video :</strong>
             <a href={this.state.cour.Video_C}>Video</a>
