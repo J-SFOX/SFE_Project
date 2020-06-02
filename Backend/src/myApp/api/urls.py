@@ -2,6 +2,7 @@ from rest_framework.routers import DefaultRouter
 from .views import ProfesseurViewSet
 from .views import EtudiantViewSet
 from .views import CourViewSet
+from .views import EventViewSet
 
 # this router replaace all the commented code below
 router = DefaultRouter()
@@ -9,6 +10,7 @@ router = DefaultRouter()
 router.register(r'professeurs', ProfesseurViewSet, basename='professeur')
 router.register(r'etudiants', EtudiantViewSet, basename='etudiant')
 router.register(r'cours', CourViewSet, basename='cour')
+router.register(r'evenements', EventViewSet, basename='evenement')
 urlpatterns = router.urls
 
 

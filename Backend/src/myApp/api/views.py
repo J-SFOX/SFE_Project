@@ -1,9 +1,11 @@
 from myApp.models import Professeur
 from myApp.models import Etudiant
 from myApp.models import Cour
+from myApp.models import Event
 from .serializers import ProfesseurSerializers
 from .serializers import EtudiantSerializers
 from .serializers import CourSerializers
+from .serializers import EventSerializers
 from rest_framework import (viewsets, generics)
 from django.http import HttpResponse
 from rest_framework.response import Response
@@ -29,7 +31,7 @@ class CourViewSet(viewsets.ModelViewSet):
     def post(self, request, *args, **kwargs):
         Titre_C = request.data['Titre_C']
         Element_C = request.data['Element_C']
-        Filiere_C = request.data['Filiere']
+        Filiere_C = request.data['Filiere_C']
         Module_C = request.data['Module_C']
         Prof_C = request.data['Prof_C']
         Semestre = request.data['Semestre']
@@ -44,7 +46,7 @@ class CourViewSet(viewsets.ModelViewSet):
             cour = Cour.objects.get(id=pk)
             Titre_C = request.data['Titre_C']
             Element_C = request.data['Element_C']
-            Filiere_C = request.data['Filiere']
+            Filiere_C = request.data['Filiere_C']
             Module_C = request.data['Module_C']
             Prof_C = request.data['Prof_C']
             Semestre = request.data['Semestre']
@@ -53,6 +55,33 @@ class CourViewSet(viewsets.ModelViewSet):
             cour.put(Titre_C=Titre_C, Element_C=Element_C,
                      Filiere_C=Filiere_C, Module_C=Module_C, Semestre=Semestre, PDF_C=PDF_C, Video_C=Video_C)
         return({'message': 'cour updated'})
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializers
+
+    def post(self, request, *args, **kwargs):
+        Titre_E = request.data['Titre_E']
+        Version_E = request.data['Version_E']
+        Club_E = request.data['Club_E']
+        Desc_E = request.data['Desc_E']
+        Image_E = request.data['Image_E']
+        Event.objects.create(Titre_E=Titre_E, Version_E=Version_E,
+                             Club_E=Club_E, Desc_E=Desc_E, Image_E=Image_E)
+        return HttpResponse({'message': 'Event created'}, status=200)
+
+    def put(self, request, pk):
+        if(pk):
+            event = Event.objects.get(id=pk)
+            Titre_E = request.data['Titre_E']
+            Version_E = request.data['Version_E']
+            Club_E = request.data['Club_E']
+            Desc_E = request.data['Desc_E']
+            Image_E = request.data['Image_E']
+            event.put(Titre_E=Titre_E, Version_E=Version_E,
+                      Club_E=Club_E, Desc_E=Desc_E, Image_E=Image_E)
+        return({'message': 'Event updated'})
 
         # def post(self, request, *args, **kwargs):
         # from rest_framework.generics import (

@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="mt-5">
       <Jumbotron className="h-400 Gr-ftr-bg Ftr-marg-0 p-b-5">
-        <Row
+        {/* <Row
           style={{
             fontSize: "22px",
             fontWeight: "bold",
@@ -14,7 +14,7 @@ function Footer() {
           className="justify-content-around mb-25"
         >
           Site Officiel de l'Ecole Superieur de Technologie
-        </Row>
+        </Row> */}
         <Row className="justify-content-between">
           <Col style={{ textAlign: "center" }}>
             <div>
@@ -51,7 +51,7 @@ function Footer() {
             Designed & developed by Jemmal soufiane
           </Col>
           <Col className="justify-content-end" md={0}>
-            copyright &#169; 2020
+            copyright <span className="Bl">&#169;</span> 2020
           </Col>
         </Row>
       </Jumbotron>

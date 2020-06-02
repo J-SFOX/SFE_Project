@@ -1,10 +1,11 @@
 import React from "react";
 import ChifCard from "../Parts/ChiffreCard";
+import { Col } from "react-bootstrap";
 
 class Chiffre extends React.Component {
   render() {
     return (
-      <div className=" mt-5 mb-5 d-flex flex-baseline flex-wrap justify-content-between">
+      <Col className=" mt-5 mb-5 d-flex flex-baseline flex-wrap justify-content-between">
         <ChifCard number={700} text={"Etudiants"} />
         <ChifCard number={28} text={"Professeurs"} />
         <ChifCard number={2600} text={"Laureat"} />
@@ -21,7 +22,7 @@ class Chiffre extends React.Component {
         <ChifCard number={1} text={"Bibliotheques"} />
         <ChifCard number={2} text={"Associations"} />
         <ChifCard number={8} text={"Club Etudiants"} />
-      </div>
+      </Col>
     );
   }
 }

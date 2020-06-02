@@ -55,3 +55,22 @@ class Cour(models.Model):
         self.PDF_C.delete()
         self.Video_C.delete()
         super().delete(*args, **kwargs)
+
+
+def upload_Image_path(instance, filename):
+    return '/'.join(['Evenement', str(instance.Titre_E), 'Annonce', filename])
+
+
+class Event (models.Model):
+    Titre_E = models.CharField(max_length=300)
+    Version_E = models.CharField(max_length=12)
+    Club_E = models.CharField(max_length=100)
+    Desc_E = models.CharField(max_length=1500)
+    Image_E = models.FileField(upload_to=upload_Image_path, null=True)
+
+    def __str__(self):
+        return self.TItre_E
+
+    def delete(self, *args, **kwargs):
+        self.Image_E.delete()
+        super().delete(*args, **kwargs)

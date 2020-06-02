@@ -29,7 +29,7 @@ class EtudXPanel extends React.Component {
   }
   handleDelete = () => {
     const {
-      match: { params },
+      match: { params }, 
     } = this.props;
     axios.delete(`http://127.0.0.1:8000/api/etudiants/${params.etudiantID}/`);
     // window.location.push('/admin/dashboard');

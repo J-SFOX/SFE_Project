@@ -16,6 +16,8 @@ import ProfXPanel from "./Pages/profXPanel";
 import ProfPanel from "./Pages/profPanel";
 import CourXPanel from "./Pages/courXPanel";
 import CourPanel from "./Pages/courPanel";
+import EventPanel from "./Pages/eventPanel";
+import EventXPanel from "./Pages/eventXPanel";
 import EtudXPanel from "./Pages/etudXPanel";
 import EtudPanel from "./Pages/etudPanel";
 import ProfDesk from "./Pages/profDesk";
@@ -143,6 +145,16 @@ class App extends React.Component {
               exact
               path="/admin/dashboard/etudPanel/"
               component={EtudPanel}
+            />
+            <Route
+              exact
+              path="/admin/dashboard/eventPanel/:eventID"
+              component={EventXPanel}
+            />
+            <Route
+              exact
+              path="/admin/dashboard/eventPanel/"
+              component={EventPanel}
             />
           </Switch>
           <Footer />
