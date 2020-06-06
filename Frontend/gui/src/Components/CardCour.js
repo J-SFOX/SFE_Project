@@ -13,11 +13,13 @@ function CardCour(props) {
           <List.Item
             className="border-bottom"
             extra={
-              <a href={item.Video_C}>
-                <video width="300" height="200" controls>
-                  <source src={item.Video_C} />
-                </video>
-              </a>
+              item.Video_C ? (
+                <a href={item.Video_C}>
+                  <video width="300" height="200" controls>
+                    <source src={item.Video_C} />
+                  </video>
+                </a>
+              ) : null
             }
           >
             <List.Item.Meta
@@ -26,13 +28,13 @@ function CardCour(props) {
               description={
                 item.PDF_C ? (
                   <div>
-                    <p>loremdofho dfbodn obo bdf</p>
+                    <p>Pdf du cour</p>
                     <a href={item.PDF_C}>
-                      <Button type="primary">Download PDF</Button>
+                      <Button type="primary">Telecharger PDF</Button>
                     </a>
                   </div>
                 ) : (
-                  <p>loremdofho dfbodn obo bdf</p>
+                  <p>ce cours n'a pas de fichier</p>
                 )
               }
             />

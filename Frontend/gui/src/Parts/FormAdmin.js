@@ -39,6 +39,7 @@ class FormAdmin extends React.Component {
   render() {
     return (
       <div className="form-container">
+        <p style={{ fontWeight: "bold", color: "#000" }}>Administration</p>
         <div className="space-align-block border border-black p-5 w-auto">
           <Space align="center">
             <Form
@@ -62,7 +63,7 @@ class FormAdmin extends React.Component {
               >
                 <Input
                   prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Username"
+                  placeholder="Nom d'utilisateur"
                 />
               </Form.Item>
               <Form.Item
@@ -77,7 +78,7 @@ class FormAdmin extends React.Component {
                 <Input.Password
                   prefix={<LockOutlined className="site-form-item-icon" />}
                   type="password"
-                  placeholder="Password"
+                  placeholder="Mot de passe"
                 />
               </Form.Item>
 
@@ -87,7 +88,7 @@ class FormAdmin extends React.Component {
                   htmlType="submit"
                   className="login-form-button"
                 >
-                  Log in
+                  Se Connecter
                 </Button>{" "}
               </Form.Item>
             </Form>

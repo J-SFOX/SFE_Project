@@ -213,11 +213,11 @@ class Register extends React.Component {
                 name="remember"
                 valuePropName="checked"
               >
-                <Checkbox>Remember me</Checkbox>
+                <Checkbox>Rester Connecter</Checkbox>
               </Form.Item>
               <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
-                  Submit
+                  S'Enregistrer
                 </Button>
               </Form.Item>
             </Form>

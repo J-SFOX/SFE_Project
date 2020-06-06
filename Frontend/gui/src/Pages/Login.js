@@ -145,7 +145,7 @@ class Login extends React.Component {
                 </Form.Item>
                 <Form.Item>
                   <Form.Item name="remember" valuePropName="checked" noStyle>
-                    <Checkbox>Remember me</Checkbox>
+                    <Checkbox>Rester Connecter</Checkbox>
                   </Form.Item>
 
                   {/* <a className="login-form-forgot" href="">
@@ -159,9 +159,9 @@ class Login extends React.Component {
                     htmlType="submit"
                     className="login-form-button"
                   >
-                    Log in
+                    Se Connecter
                   </Button>{" "}
-                  Or <NavLink to="/register"> Register</NavLink>
+                  Ou <NavLink to="/register"> s'enregistrer</NavLink>
                 </Form.Item>
               </Form>
             </Space>

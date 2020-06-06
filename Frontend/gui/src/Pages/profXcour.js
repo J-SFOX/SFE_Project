@@ -73,10 +73,10 @@ class ProfXcour extends React.Component {
                   <span style={{ fontWeight: "bold" }}>Semestre :</span>{" "}
                   {this.state.cour.Semestre}
                 </p>
-                <p>
+                {/* <p>
                   <span style={{ fontWeight: "bold" }}>Ajouter par :</span>{" "}
                   {prf}
-                </p>
+                </p> */}
               </div>
               <div className="d-flex">
                 <Button type="link" onClick={this.showModal}>

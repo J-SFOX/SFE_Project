@@ -31,6 +31,9 @@ class ContactPage extends React.Component {
     return (
       <Col className="form-container">
         <Col className="">
+          <h2>Contactez-Nous</h2>
+          <br />
+          <br />
           <Form
             onSubmitCapture={this.handleSubmit}
             {...layout}
@@ -41,7 +44,7 @@ class ContactPage extends React.Component {
             <Form.Item
               className="w-75pc"
               name="name"
-              label="Name"
+              label="Nom et Prenom"
               rules={[
                 {
                   required: true,

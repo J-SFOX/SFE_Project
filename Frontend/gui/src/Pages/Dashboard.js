@@ -33,7 +33,7 @@ class DashboardPage extends React.Component {
             >
               <SiderLayout />
             </Sider>
-            <Content>
+            <Content style={{ backgroundColor: "#fff" }}>
               <Switch>
                 <Route
                   path="/admin/dashboard/etudPanel"
